@@ -1,4 +1,24 @@
 {
-    "title": "React Redux Typescript Boiler Plate",
-    "subtitle": "Here is a simple redux counter"
+    "channel": "Channel",
+    "channel_plural": "Channels",
+
+    "home": {
+        "discover": "Hundreds of programs and movies to discover.",
+        "explore": "Explore now.",
+        "breadcrumb": "Home"
+    },
+
+    "programs": {
+        "scheduled": "Scheduled On TV"
+    },
+
+    "vods": {
+        "watch": "Start watching",
+        "description": "Description"
+    },
+
+    "error": {
+        "title": "Error!",
+        "description": "Error loading data. Please reload the page."
+    }
 }
