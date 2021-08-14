@@ -44,7 +44,7 @@ export const ProgramDetails = (): JSX.Element => {
                 </Skeleton>
 
                 <Flex direction="column" justify="center" pl="20px">
-                    <Skeleton height="68px" isLoaded={isSuccess}>
+                    <Skeleton isLoaded={isSuccess}>
                         <Heading>{data?.title}</Heading>
 
                         <HStack mb="12px">
