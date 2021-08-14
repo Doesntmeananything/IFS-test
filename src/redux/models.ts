@@ -1,3 +1,3 @@
-import counter from './counter';
+import channels from './channels';
 
-export { counter };
+export { channels };
