@@ -1,11 +1,22 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#c25b5b",
-        "titleBar.activeBackground": "#c25b5b",
-        "titleBar.activeForeground": "#FEFAFF"
-    },
+    "cSpell.words": [
+        "datetime",
+        "dismissable",
+        "heroicons",
+        "lngs",
+        "maculosa",
+        "metatype",
+        "mosaïque",
+        "que",
+        "reduxjs",
+        "scrollable",
+        "testid",
+        "unmoun",
+        "unmount",
+        "vods",
+        "webfonts"
+    ],
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
         "source.fixAll.eslint": true
-    },
+    }
 }
