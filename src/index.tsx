@@ -8,7 +8,9 @@ import { Route, Switch } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import i18next from './configs/i18n';
 import ROUTES from './constants/routes';
+import { Home } from './pages/Home';
 import { Program } from './pages/Program';
+import { Vod } from './pages/Vod';
 import store, { history } from './redux';
 import { theme } from './theme';
 
@@ -21,6 +23,7 @@ ReactDOM.render(
                     <Switch>
                         <Route exact path={ROUTES.home} component={Home} />
                         <Route exact path={ROUTES.programDetails} component={Program} />
+                        <Route exact path={ROUTES.vodDetails} component={Vod} />
                     </Switch>
                 </ChakraProvider>
             </I18nextProvider>
