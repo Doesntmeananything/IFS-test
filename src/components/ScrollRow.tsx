@@ -44,7 +44,7 @@ export const ScrollRow = ({ rowLabel, children }: Props): JSX.Element => {
                 direction="row"
                 overflowX="scroll"
                 ref={scrollRowRef}
-                // Hide scrollbars with CSS to allow drag scrolling on mobile devices
+                // Hide scrollbars with CSS to allow drag and gesture scrolling on certain devices
                 sx={{
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none',
