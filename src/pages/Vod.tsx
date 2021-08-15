@@ -10,9 +10,9 @@ export const Vod = (): JSX.Element => {
             <VodDetails />
 
             <Stack maxW="8xl" m="auto" spacing="16px" px="20px" pb="24px">
-                <Programs />
-
                 <VODs />
+
+                <Programs />
             </Stack>
         </>
     );
