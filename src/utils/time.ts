@@ -1,4 +1,4 @@
-import i18n from '../configs/i18n';
+import i18n from 'src/configs/i18n';
 
 /**
  * Formats broadcast time string based on current locale.
