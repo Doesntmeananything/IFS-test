@@ -40,8 +40,8 @@ export const VodDetails = (): JSX.Element => {
 
                         <Flex justify="center" pl="40px" direction="column">
                             <Skeleton isLoaded={isSuccess} h="75px">
-                                <Heading mb={2}>
-                                    <Text as="span" mr="2">
+                                <Heading mb="8px">
+                                    <Text as="span" mr="8px">
                                         {data?.title}
                                     </Text>
                                     <Text as="span" fontWeight="normal">

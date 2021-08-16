@@ -20,7 +20,7 @@ export const ScrollRow = ({ rowLabel, children }: Props): JSX.Element => {
 
     return (
         <div>
-            <Flex justify="space-between" align="center" paddingY="2">
+            <Flex justify="space-between" align="center" paddingY="8px">
                 <Heading size="lg">{rowLabel}</Heading>
                 <Stack direction="row">
                     <IconButton

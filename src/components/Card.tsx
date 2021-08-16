@@ -14,7 +14,7 @@ interface Props {
 export const Card = ({ imageSrc, imageAlt, title, subtitle, imageHeight = 'inherit' }: Props): JSX.Element => {
     return (
         <Flex direction="column" w="200px">
-            <Box overflow="hidden" borderRadius="md" mb="3">
+            <Box overflow="hidden" borderRadius="md" mb="12px">
                 <AspectRatio
                     ratio={16 / 9}
                     height={imageHeight}
@@ -28,7 +28,7 @@ export const Card = ({ imageSrc, imageAlt, title, subtitle, imageHeight = 'inher
             </Box>
 
             <div>
-                <Heading size="sm" mb="2" isTruncated title={title}>
+                <Heading size="sm" mb="8px" isTruncated title={title}>
                     {title}
                 </Heading>
                 <Tag size="sm">{subtitle}</Tag>
