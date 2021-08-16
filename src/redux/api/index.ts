@@ -60,7 +60,7 @@ export const maculosaApi = createApi({
             transformResponse: (response: VODsResponse) => response.contents,
         }),
 
-        getVodDetailsByContentId: builder.query<VOD, string>({
+        getVodDetails: builder.query<VOD, string>({
             query: (vodId) => ({ url: `${API_ROUTES.vodDetails}/${vodId}` }),
             transformResponse: (response: VODResponse) => response.content,
         }),
@@ -72,5 +72,5 @@ export const {
     useGetProgramsByChannelIdQuery,
     useGetProgramDetailsQuery,
     useGetVODContentsQuery,
-    useGetVodDetailsByContentIdQuery,
+    useGetVodDetailsQuery,
 } = maculosaApi;

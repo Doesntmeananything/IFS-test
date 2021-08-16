@@ -1,4 +1,5 @@
 import { Box, Skeleton } from '@chakra-ui/react';
+import { MouseEventHandler } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +9,7 @@ import ROUTES from 'src/constants/routes';
 import { useShowErrorToast } from 'src/hooks/errors';
 import { useAppSelector } from 'src/hooks/redux';
 import fallbackImage from 'src/images/fallback.jpg';
-import { useGetProgramsByChannelIdQuery } from 'src/redux/api';
+import { maculosaApi, useGetProgramsByChannelIdQuery } from 'src/redux/api';
 import { formatBroadcastTime } from 'src/utils/time';
 
 import { Channels } from './Channels';
@@ -24,6 +25,11 @@ export const Programs = (): JSX.Element => {
 
     useShowErrorToast(isError);
 
+    const prefetchOnHover = maculosaApi.usePrefetch('getProgramDetails');
+    const onMouseEnter: MouseEventHandler<HTMLAnchorElement> = (event) => {
+        prefetchOnHover(String(event.currentTarget.id));
+    };
+
     return (
         <Box borderWidth="1px" borderRadius="lg" p="24px">
             <Channels />
@@ -31,7 +37,13 @@ export const Programs = (): JSX.Element => {
             <ScrollRow rowLabel={t('programs.scheduled')}>
                 {isSuccess
                     ? data.map((program) => (
-                          <Link key={program.id} to={`${ROUTES.programs}/${program.id}`} data-testid="program">
+                          <Link
+                              id={String(program.id)}
+                              key={program.id}
+                              onMouseEnter={onMouseEnter}
+                              to={`${ROUTES.programs}/${program.id}`}
+                              data-testid="program"
+                          >
                               <Card
                                   key={program.id}
                                   imageSrc={program.pictures?.thumbnails?.[0] ?? fallbackImage}

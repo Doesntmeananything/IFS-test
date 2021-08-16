@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { Header } from 'src/containers/Header';
 import { useShowErrorToast } from 'src/hooks/errors';
-import { useGetVodDetailsByContentIdQuery } from 'src/redux/api';
+import { useGetVodDetailsQuery } from 'src/redux/api';
 import { formatSecondsToHoursAndMinutes } from 'src/utils/time';
 
 /**
@@ -13,7 +13,7 @@ import { formatSecondsToHoursAndMinutes } from 'src/utils/time';
  */
 export const VodDetails = (): JSX.Element => {
     const { id } = useParams<{ id: string }>();
-    const { data, isSuccess, isError } = useGetVodDetailsByContentIdQuery(id);
+    const { data, isSuccess, isError } = useGetVodDetailsQuery(id);
 
     const { t } = useTranslation();
 

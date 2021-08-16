@@ -1,11 +1,12 @@
 import { Skeleton } from '@chakra-ui/react';
+import { MouseEventHandler } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Card } from 'src/components/Card';
 import { ScrollRow } from 'src/components/ScrollRow';
 import ROUTES from 'src/constants/routes';
 import { useShowErrorToast } from 'src/hooks/errors';
-import { useGetVODContentsQuery } from 'src/redux/api';
+import { maculosaApi, useGetVODContentsQuery } from 'src/redux/api';
 
 interface Props {
     category: string;
@@ -19,11 +20,21 @@ export const VODRow = ({ category }: Props): JSX.Element => {
 
     useShowErrorToast(isError);
 
+    const prefetchVod = maculosaApi.usePrefetch('getVodDetails');
+    const prefetchOnHover: MouseEventHandler<HTMLAnchorElement> = (event) => {
+        prefetchVod(String(event.currentTarget.id));
+    };
+
     return (
         <ScrollRow rowLabel={category}>
             {isSuccess
                 ? data.map((vod) => (
-                      <Link key={vod.id} to={`${ROUTES.vods}/${vod.id}`}>
+                      <Link
+                          id={String(vod.id)}
+                          onMouseEnter={prefetchOnHover}
+                          key={vod.id}
+                          to={`${ROUTES.vods}/${vod.id}`}
+                      >
                           <Card
                               key={vod.id}
                               imageSrc={vod.pictures?.thumbnails?.[0]}
